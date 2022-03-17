@@ -3,5 +3,11 @@ class Comment < ApplicationRecord
   # defines a Active Record association
   belongs_to :article
 
-  # ???? Why does comment does not have an entry for the commenter and its body
+  VALID_STATUSES = ['public', 'private', 'archived']
+
+  validates :status, inclusion: { in: VALID_STATUSES}
+
+  def archived?
+    status == 'archived'
+  end
 end
