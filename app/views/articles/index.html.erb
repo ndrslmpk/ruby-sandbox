@@ -4,8 +4,14 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <%= link_to article.title, article%>
-      <%= article.body %>
+      <!-- the link_to helper converts the aimed object into a targetable path by using the path helper -->
+      <%= link_to article.id, article %> 
+      <a href="<%= article_path(article)%>"> 
+        <%= article.title %>
+        <%= article.body %>
+      </a>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "New Article", new_article_path %>
