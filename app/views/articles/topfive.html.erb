@@ -1,0 +1,11 @@
+<h1>Hello, Rails!</h1>
+<h2>It's me.</h2>
+
+<ul>
+  <% @topfive.each do |article| %>
+    <li>
+      <%= link_to article.title, article%>
+      <%= article.body %>
+    </li>
+  <% end %>
+</ul>
