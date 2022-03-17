@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
 
 
   def create
-    @article = Article.new(title:"...", body:"...")
+    @article = Article.new(article_params)
     # @articleDefault = Article.new(title:"Default Title", body:"Default Body")
 
     if @article.save
