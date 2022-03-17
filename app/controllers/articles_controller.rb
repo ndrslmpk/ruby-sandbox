@@ -79,6 +79,6 @@ class ArticlesController < ApplicationController
     # This method is used to allow the usage of parameters, that are explicitly allowed.
     # Using this opt-in method, malicious attackers are not able to attach other parameters that might trigger malicious and unexpected actions.
     def article_params
-      params.require(:article).permit(:title, :body) # filters params
+      params.require(:article).permit(:title, :body, :status) # filters params
     end
 end

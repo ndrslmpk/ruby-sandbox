@@ -13,9 +13,11 @@
 
 <%#   @method: render 
         This will render the _comment.html partial for each comment that is in the @article.comments collection. It furthermore assigns each varuiable to a local variable
+
+        ??? HOW IS THIS RENDERING POSSIBLE?
 %>
 <h2>Comments</h2>
 <%= render @article.comments %>
 
 <h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+<%= render "comments/form", article: @article %>
