@@ -1,7 +1,7 @@
 module Visible
   extend ActiveSupport::Concern
 
-  VALID_STATUSES = ['private', 'public', 'archieved']
+  VALID_STATUSES = ['private', 'public', 'archived']
   
   #included is a featrue provided by the ActiveSupport::Concern class
   included do 
@@ -14,7 +14,7 @@ module Visible
     end
 
     def invisible_count
-      where((status: 'private') | (status: 'archieved'))
+      where(status: 'private' | 'archived').count
     end
   end
   

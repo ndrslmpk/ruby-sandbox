@@ -1,9 +1,11 @@
 <h1>Hello, Rails!</h1>
 <h2>It's me.</h2>
 
+<p>This blog has <strong><%= Article.public_count %></strong> articles publicly available for you!</p>
+
 <ul>
   <% @articles.each do |article| %>
-    <%= unless article.archived? %>
+    <% unless article.archived? %>
       <li>
         <!-- the link_to helper converts the aimed object into a targetable path by using the path helper -->
         <%= link_to article.id, article %> 
@@ -12,7 +14,7 @@
           <%= article.body %>
         </a>
       </li>
-    <%= end %>
+    <% end %>
   <% end %>
 </ul>
 
